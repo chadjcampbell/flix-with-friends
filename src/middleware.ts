@@ -8,7 +8,7 @@ export const config = {
 };
 
 export default authMiddleware({
-  publicRoutes: ["/landing", "/contact"],
+  publicRoutes: ["/landing", "/contact", "/signin", "/signup"],
   afterAuth(auth, req, _evt) {
     // Handle users who aren't authenticated
     if (!auth.userId && !auth.isPublicRoute) {
