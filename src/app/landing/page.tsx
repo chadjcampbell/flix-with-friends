@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Landing() {
   return (
     <main
-      className="min-h-dvh p-4"
+      className="min-h-dvh p-4 bg-black"
       style={{
         backgroundImage: `url(${bg.src})`,
         width: "100%",
@@ -36,13 +36,13 @@ export default function Landing() {
         <div className="flex justify-center space-x-8">
           <Link
             href="/signin"
-            className="bg-purple-800 text-white text-xl px-6 py-2 rounded-full hover:bg-purple-600"
+            className="bg-purple-800 text-white text-xl px-6 py-2 rounded-lg hover:bg-purple-600"
           >
             Sign In
           </Link>
           <Link
             href="/signup"
-            className="bg-red-800 text-white text-xl px-6 py-2 rounded-full hover:bg-red-600"
+            className="bg-red-800 text-white text-xl px-6 py-2 rounded-lg hover:bg-red-600"
           >
             Sign Up
           </Link>
