@@ -1,19 +1,19 @@
 import Image from "next/image";
-import bg from "../../../public/theatre-pic.jpg";
+import bg from "../../../public/newbg.jpg";
 import Link from "next/link";
 
 export default function Landing() {
   return (
-    <main
-      className="min-h-dvh p-4 bg-black"
-      style={{
-        backgroundImage: `url(${bg.src})`,
-        width: "100%",
-        height: "100%",
-      }}
-    >
-      <nav className="px-4 w-fit bg-black bg-opacity-30 rounded-lg">
-        <Link href="/" className="p-4">
+    <main className="min-h-dvh w-dvw relative">
+      <Image
+        layout="fill"
+        objectFit="cover"
+        src={bg}
+        alt="background image"
+        className="-z-50"
+      />
+      <nav className="flex w-full h-40 bg-gradiant-to-b from-black to-transparent">
+        <Link href="/" className="m-4">
           <Image
             src={"/logos/logo-no-background.png"}
             alt="Flix with Friends Logo"
