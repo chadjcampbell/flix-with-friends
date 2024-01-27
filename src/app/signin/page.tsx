@@ -1,20 +1,21 @@
 import Image from "next/image";
-import bg from "../../../public/theatre-pic.jpg";
+import bg from "../../../public/netflixbg.jpg";
 import Link from "next/link";
 import { SignIn } from "@clerk/nextjs";
 
 export default function SignInPage() {
   return (
-    <main
-      className="min-h-dvh p-4"
-      style={{
-        backgroundImage: `url(${bg.src})`,
-        width: "100%",
-        height: "100%",
-      }}
-    >
-      <nav className="px-4 w-fit bg-black bg-opacity-30 rounded-lg">
-        <Link href="/" className="p-4">
+    <main className="min-h-dvh w-dvw flex flex-col items-center bg-gradient-to-b from-black to-transparent">
+      <Image
+        layout="fill"
+        objectFit="cover"
+        src={bg}
+        alt="background image"
+        className="-z-50"
+      />
+
+      <nav className="flex w-full">
+        <Link href="/" className="m-6">
           <Image
             src={"/logos/logo-no-background.png"}
             alt="Flix with Friends Logo"
@@ -23,8 +24,7 @@ export default function SignInPage() {
           />
         </Link>
       </nav>
-
-      <div className="flex justify-center items-center mt-12">
+      <div className="my-auto">
         <SignIn signUpUrl="/signup" />
       </div>
     </main>

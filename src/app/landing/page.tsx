@@ -1,10 +1,10 @@
 import Image from "next/image";
-import bg from "../../../public/newbg.jpg";
+import bg from "../../../public/netflixbg.jpg";
 import Link from "next/link";
 
 export default function Landing() {
   return (
-    <main className="min-h-dvh w-dvw relative">
+    <main className="min-h-dvh w-dvw flex flex-col items-center bg-gradient-to-b from-black to-transparent">
       <Image
         layout="fill"
         objectFit="cover"
@@ -12,8 +12,9 @@ export default function Landing() {
         alt="background image"
         className="-z-50"
       />
-      <nav className="flex w-full h-40 bg-gradiant-to-b from-black to-transparent">
-        <Link href="/" className="m-4">
+
+      <nav className="flex w-full">
+        <Link href="/" className="m-6">
           <Image
             src={"/logos/logo-no-background.png"}
             alt="Flix with Friends Logo"
@@ -23,7 +24,7 @@ export default function Landing() {
         </Link>
       </nav>
 
-      <div className="max-w-4xl mx-auto mt-16 p-10 text-center bg-black bg-opacity-30 w-fit rounded-lg">
+      <div className="max-w-4xl my-auto p-10 text-center w-fit rounded-lg">
         <h1 className="text-6xl font-bold text-white mb-4">
           Flix with Friends
         </h1>
