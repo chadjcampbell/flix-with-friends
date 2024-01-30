@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
+    "@lucia-auth/adapter-drizzle": "^1.0.0",
     "@vercel/postgres": "^0.5.1",
     "drizzle-orm": "^0.29.3",
     "framer-motion": "^10.18.0",
+    "lucia": "^3.0.1",
     "next": "14.0.4",
+    "oslo": "^1.0.3",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.0",
