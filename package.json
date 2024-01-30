@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.29.2",
     "@heroicons/react": "^2.1.1",
     "@vercel/postgres": "^0.5.1",
     "drizzle-orm": "^0.29.3",

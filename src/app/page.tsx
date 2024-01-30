@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { UserButton } from "@clerk/nextjs";
 
 export default function Home() {
   return (
@@ -15,14 +14,7 @@ export default function Home() {
           />
         </Link>
         <div className="mr-6 border-solid border-4 border-purple-800 rounded-full">
-          <UserButton
-            appearance={{
-              elements: {
-                userButtonAvatarBox: "h-14 w-auto",
-              },
-            }}
-            afterSignOutUrl="/landing"
-          />
+          {/* user button component here */}
         </div>
       </nav>
     </main>

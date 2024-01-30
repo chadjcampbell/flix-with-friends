@@ -1,7 +1,6 @@
 import Image from "next/image";
 import bg from "../../../public/netflixbg.jpg";
 import Link from "next/link";
-import { SignIn } from "@clerk/nextjs";
 
 export default function SignInPage() {
   return (
@@ -24,9 +23,7 @@ export default function SignInPage() {
           />
         </Link>
       </nav>
-      <div className="my-auto">
-        <SignIn signUpUrl="/signup" />
-      </div>
+      <div className="my-auto">{/* sign in component here */}</div>
     </main>
   );
 }
