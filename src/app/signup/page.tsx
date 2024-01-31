@@ -1,6 +1,7 @@
 import Image from "next/image";
 import bg from "../../../public/netflixbg.jpg";
 import Link from "next/link";
+import signup from "@/actions/auth/signup";
 
 export default function SignUpPage() {
   return (
@@ -23,7 +24,18 @@ export default function SignUpPage() {
           />
         </Link>
       </nav>
-      <div className="my-auto">{/* sign up component here */}</div>
+      <div className="my-auto">
+        {" "}
+        <form action={signup}>
+          <label htmlFor="username">Username</label>
+          <input name="username" id="username" />
+          <br />
+          <label htmlFor="password">Password</label>
+          <input type="password" name="password" id="password" />
+          <br />
+          <button>Continue</button>
+        </form>
+      </div>
     </main>
   );
 }

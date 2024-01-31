@@ -1,7 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import { validateRequest } from "@/actions/auth/validateRequest";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default async function Home() {
+  const { user } = await validateRequest();
+  if (!user) {
+    return redirect("/signin");
+  }
   return (
     <main className="min-h-dvh w-dvw bg-black">
       <nav className="flex w-full items-center justify-between ">
