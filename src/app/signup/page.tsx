@@ -24,14 +24,43 @@ export default function SignUpPage() {
       </nav>
       <div className="my-auto">
         {" "}
-        <form action={signup}>
+        <form
+          className="bg-white p-6 flex flex-col gap-4 rounded-md"
+          action={signup}
+        >
           <label htmlFor="username">Username</label>
-          <input name="username" id="username" />
-          <br />
+          <input
+            className="border-solid border-2 border-black p-2 rounded-md"
+            name="username"
+            id="username"
+          />
           <label htmlFor="password">Password</label>
-          <input type="password" name="password" id="password" />
+          <input
+            className="border-solid border-2 border-black p-2 rounded-md"
+            type="password"
+            name="password"
+            id="password"
+          />
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <input
+            className="border-solid border-2 border-black p-2 rounded-md"
+            type="password"
+            name="confirmPassword"
+            id="confirmPassword"
+          />
           <br />
-          <button>Continue</button>
+          <button
+            type="submit"
+            className="bg-red-800 text-white text-xl px-6 py-2 rounded-lg hover:bg-red-600"
+          >
+            Sign Up
+          </button>
+          <p className="text-center">
+            Already a member?{" "}
+            <Link className="text-indigo-800" href="/signin">
+              Sign In
+            </Link>
+          </p>
         </form>
       </div>
     </main>

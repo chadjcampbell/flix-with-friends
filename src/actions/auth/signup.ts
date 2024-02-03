@@ -1,28 +1,35 @@
+"use server";
+
 import { Argon2id } from "oslo/password";
 import { cookies } from "next/headers";
 import { lucia } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { generateId } from "lucia";
 import { db, user } from "@/lib/db";
+import { eq } from "drizzle-orm";
 
 export default async function signup(
   formData: FormData
 ): Promise<ActionResult> {
-  "use server";
   const username = formData.get("username");
-  // username must be between 4 ~ 31 characters, and only consists of lowercase letters, 0-9, -, and _
-  // keep in mind some database (e.g. mysql) are case insensitive
+  // username must be between 4 ~ 31 characters, and only consists of letters, 0-9, -, and _
   if (
     typeof username !== "string" ||
     username.length < 3 ||
     username.length > 31 ||
-    !/^[a-z0-9_-]+$/.test(username)
+    !/^[a-zA-Z0-9_-]+$/.test(username)
   ) {
     return {
       error: "Invalid username",
     };
   }
   const password = formData.get("password");
+  const confirmPassword = formData.get("confirmPassword");
+  if (password !== confirmPassword) {
+    return {
+      error: "Passwords do not match",
+    };
+  }
   if (
     typeof password !== "string" ||
     password.length < 6 ||
@@ -36,7 +43,17 @@ export default async function signup(
   const hashedPassword = await new Argon2id().hash(password);
   const userId = generateId(15);
 
-  // TODO: check if username is already used
+  // check if username is already used
+  const userExists = await db
+    .select()
+    .from(user)
+    .where(eq(user.username, username));
+  if (userExists.length > 0) {
+    return {
+      error: "Username already taken",
+    };
+  }
+
   await db.insert(user).values({
     id: userId,
     username: username,
