@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 export default async function Home() {
   const { user } = await validateRequest();
   if (!user) {
-    return redirect("/signin");
+    return redirect("/landing");
   }
   return (
     <main className="min-h-dvh w-dvw bg-black">
