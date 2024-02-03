@@ -8,6 +8,7 @@ import { db, user } from "@/lib/db";
 import { eq } from "drizzle-orm";
 
 export default async function signin(
+  _: any,
   formData: FormData
 ): Promise<ActionResult> {
   const username = formData.get("username");
@@ -37,7 +38,7 @@ export default async function signin(
     .from(user)
     .where(eq(user.username, username));
   const existingUser = existingUserArr[0];
-  if (!existingUser.username || !existingUser.hashed_password) {
+  if (!existingUser?.username || !existingUser?.hashed_password) {
     return {
       error: "Incorrect username or password",
     };
@@ -64,5 +65,5 @@ export default async function signin(
 }
 
 interface ActionResult {
-  error: string;
+  error?: string | null;
 }
