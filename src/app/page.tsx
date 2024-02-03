@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { validateRequest } from "@/actions/auth/validateRequest";
 import { redirect } from "next/navigation";
+import { CgProfile } from "react-icons/cg";
 
 export default async function Home() {
   const { user } = await validateRequest();
@@ -20,7 +21,7 @@ export default async function Home() {
           />
         </Link>
         <div className="mr-6 border-solid border-4 border-purple-800 rounded-full">
-          {/* user button component here */}
+          <CgProfile />
         </div>
       </nav>
     </main>

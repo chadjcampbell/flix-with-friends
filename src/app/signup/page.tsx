@@ -23,19 +23,20 @@ export default function SignUpPage() {
         </Link>
       </nav>
       <div className="my-auto">
-        {" "}
         <form
           className="bg-white p-6 flex flex-col gap-4 rounded-md"
           action={signup}
         >
           <label htmlFor="username">Username</label>
           <input
+            required
             className="border-solid border-2 border-black p-2 rounded-md"
             name="username"
             id="username"
           />
           <label htmlFor="password">Password</label>
           <input
+            required
             className="border-solid border-2 border-black p-2 rounded-md"
             type="password"
             name="password"
@@ -43,6 +44,7 @@ export default function SignUpPage() {
           />
           <label htmlFor="confirmPassword">Confirm Password</label>
           <input
+            required
             className="border-solid border-2 border-black p-2 rounded-md"
             type="password"
             name="confirmPassword"
