@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { validateRequest } from "@/actions/auth/validateRequest";
 import { redirect } from "next/navigation";
-import { CgProfile } from "react-icons/cg";
+import ProfileMenu from "@/ui/ProfileMenu";
 
 export default async function Home() {
   const { user } = await validateRequest();
@@ -20,9 +20,7 @@ export default async function Home() {
             height={30}
           />
         </Link>
-        <div className="mr-6 border-solid border-4 border-purple-800 rounded-full">
-          <CgProfile />
-        </div>
+        <ProfileMenu />
       </nav>
     </main>
   );
