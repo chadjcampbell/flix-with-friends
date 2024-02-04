@@ -9,6 +9,7 @@ import { db, user } from "@/lib/db";
 import { eq } from "drizzle-orm";
 
 export default async function signup(
+  _: any,
   formData: FormData
 ): Promise<ActionResult> {
   const username = formData.get("username");
@@ -30,13 +31,19 @@ export default async function signup(
       error: "Passwords do not match",
     };
   }
-  if (
-    typeof password !== "string" ||
-    password.length < 6 ||
-    password.length > 255
-  ) {
+  if (typeof password !== "string") {
     return {
       error: "Invalid password",
+    };
+  }
+  if (password.length < 6) {
+    return {
+      error: "Password must be more than 6 characters",
+    };
+  }
+  if (password.length > 255) {
+    return {
+      error: "Password too long",
     };
   }
 
@@ -71,5 +78,5 @@ export default async function signup(
 }
 
 interface ActionResult {
-  error: string;
+  error: string | null;
 }
