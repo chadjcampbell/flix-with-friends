@@ -45,7 +45,7 @@ const SignInForm = () => {
       </button>
       <p className="text-center">
         Not yet a member?{" "}
-        <Link className="text-red-800" href="/signup">
+        <Link className="text-red-800" href="/no-auth/signup">
           Sign Up
         </Link>
       </p>

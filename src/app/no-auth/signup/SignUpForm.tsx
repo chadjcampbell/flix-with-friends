@@ -50,7 +50,7 @@ const SignUpForm = () => {
       </button>
       <p className="text-center">
         Already a member?{" "}
-        <Link className="text-indigo-800" href="/signin">
+        <Link className="text-indigo-800" href="/no-auth/signin">
           Sign In
         </Link>
       </p>

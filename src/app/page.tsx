@@ -5,7 +5,7 @@ import Navbar from "@/ui/Navbar";
 export default async function Home() {
   const { user } = await validateRequest();
   if (!user) {
-    return redirect("/landing");
+    return redirect("/no-auth/landing");
   }
   return (
     <main className="min-h-dvh w-dvw bg-black">
