@@ -1,6 +1,6 @@
 import Image from "next/image";
 import bg from "../../../public/netflixbg.jpg";
-import NoAuthNavbar from "@/ui/NoAuthNavbar";
+import NoAuthNavbar from "@/components/NoAuthNavbar";
 import { validateRequest } from "@/actions/auth/validateRequest";
 import { redirect } from "next/navigation";
 

@@ -11,7 +11,7 @@ const ProfileMenu = () => {
   };
 
   return (
-    <div className="relative ml-auto">
+    <div>
       <button
         className="mr-6 border-solid border-4 border-purple-800 rounded-full p-2 focus:outline-none focus:border-indigo-500"
         onClick={togglePopover}
