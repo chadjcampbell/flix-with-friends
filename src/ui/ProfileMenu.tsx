@@ -11,7 +11,7 @@ const ProfileMenu = () => {
   };
 
   return (
-    <div className="relative inline-block">
+    <div className="relative ml-auto">
       <button
         className="mr-6 border-solid border-4 border-purple-800 rounded-full p-2 focus:outline-none focus:border-indigo-500"
         onClick={togglePopover}
@@ -19,15 +19,15 @@ const ProfileMenu = () => {
         <CgProfile size={"2rem"} color={"indigo"} />
       </button>
       {isOpen && (
-        <div className="bg-white rounded-md absolute z-10 shadow-lg right-0">
+        <div className="bg-white rounded-md shadow-lg">
           <div className="flex flex-col gap-2 m-2 p-2">
-            <button className="hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
+            <button className="hover:bg-gray-300 focus:outline-none focus:bg-gray-100">
               Profile
             </button>
-            <button className="hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
+            <button className="hover:bg-gray-300 focus:outline-none focus:bg-gray-100">
               Friends
             </button>
-            <button className="hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
+            <button className="hover:bg-gray-300 focus:outline-none focus:bg-gray-100">
               Log Out
             </button>
           </div>
