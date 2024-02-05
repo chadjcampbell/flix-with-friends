@@ -14,6 +14,7 @@ const SignUpForm = () => {
     >
       <label htmlFor="username">Username</label>
       <input
+        autoComplete="username"
         required
         className="border-solid border-2 border-black p-2 rounded-md"
         name="username"
@@ -21,6 +22,7 @@ const SignUpForm = () => {
       />
       <label htmlFor="password">Password</label>
       <input
+        autoComplete="new-password"
         required
         className="border-solid border-2 border-black p-2 rounded-md"
         type="password"
@@ -29,6 +31,7 @@ const SignUpForm = () => {
       />
       <label htmlFor="confirmPassword">Confirm Password</label>
       <input
+        autoComplete="new-password"
         required
         className="border-solid border-2 border-black p-2 rounded-md"
         type="password"

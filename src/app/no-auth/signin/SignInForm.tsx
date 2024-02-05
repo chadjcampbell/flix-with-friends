@@ -14,6 +14,7 @@ const SignInForm = () => {
     >
       <label htmlFor="username">Username</label>
       <input
+        autoComplete="username"
         className="border-solid border-2 border-black p-2 rounded-md"
         name="username"
         id="username"
@@ -21,6 +22,7 @@ const SignInForm = () => {
       />
       <label htmlFor="password">Password</label>
       <input
+        autoComplete="current-password"
         className="border-solid border-2 border-black p-2 rounded-md"
         type="password"
         name="password"

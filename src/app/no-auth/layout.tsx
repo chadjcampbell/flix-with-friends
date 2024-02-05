@@ -1,6 +1,6 @@
 import Image from "next/image";
 import bg from "../../../public/netflixbg.jpg";
-import NoAuthNav from "@/ui/NoAuthNav";
+import NoAuthNavbar from "@/ui/NoAuthNavbar";
 import { validateRequest } from "@/actions/auth/validateRequest";
 import { redirect } from "next/navigation";
 
@@ -21,7 +21,7 @@ export default async function NoAuthLayout({
         alt="background image"
         className="-z-50 object-cover"
       />
-      <NoAuthNav />
+      <NoAuthNavbar />
       {children}
     </main>
   );

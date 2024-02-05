@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const NoAuthNav = () => {
+const NoAuthNavbar = () => {
   return (
     <nav className="flex w-full">
       <Link href="/no-auth/landing" className="m-6">
@@ -16,4 +16,4 @@ const NoAuthNav = () => {
   );
 };
 
-export default NoAuthNav;
+export default NoAuthNavbar;
