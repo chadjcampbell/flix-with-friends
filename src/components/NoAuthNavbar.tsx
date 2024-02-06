@@ -1,18 +1,22 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Navbar, NavbarContent, NavbarBrand, Link } from "@nextui-org/react";
 
 const NoAuthNavbar = () => {
   return (
-    <nav className="flex w-full">
-      <Link href="/no-auth/landing" className="m-6">
-        <Image
-          src={"/logos/logo-no-background.png"}
-          alt="Flix with Friends Logo"
-          width={200}
-          height={30}
-        />
-      </Link>
-    </nav>
+    <Navbar isBlurred={false} maxWidth="full" className="bg-transparent">
+      <NavbarContent justify="start">
+        <NavbarBrand>
+          <Link href="/no-auth/landing" className="m-6">
+            <Image
+              src={"/logos/logo-white-crop.png"}
+              alt="Flix with Friends Logo"
+              width={200}
+              height={40}
+            />
+          </Link>
+        </NavbarBrand>
+      </NavbarContent>
+    </Navbar>
   );
 };
 

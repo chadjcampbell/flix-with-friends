@@ -14,7 +14,7 @@ export default async function NoAuthLayout({
     return redirect("/auth/");
   }
   return (
-    <>
+    <div className="min-h-dvh w-dvw flex flex-col items-center justify-center bg-gradient-to-b from-black to-transparent">
       <Image
         fill
         src={bg}
@@ -23,6 +23,6 @@ export default async function NoAuthLayout({
       />
       <NoAuthNavbar />
       <main>{children}</main>
-    </>
+    </div>
   );
 }
