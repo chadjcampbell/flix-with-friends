@@ -11,10 +11,10 @@ export default async function NoAuthLayout({
 }) {
   const { user } = await validateRequest();
   if (user) {
-    return redirect("/");
+    return redirect("/auth/");
   }
   return (
-    <main className="min-h-dvh w-dvw flex flex-col items-center bg-gradient-to-b from-black to-transparent">
+    <>
       <Image
         fill
         src={bg}
@@ -22,7 +22,7 @@ export default async function NoAuthLayout({
         className="-z-50 object-cover"
       />
       <NoAuthNavbar />
-      {children}
-    </main>
+      <main>{children}</main>
+    </>
   );
 }

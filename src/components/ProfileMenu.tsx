@@ -1,3 +1,4 @@
+import { signout } from "@/actions/auth/signout";
 import {
   Dropdown,
   DropdownTrigger,
@@ -14,7 +15,7 @@ export default function ProfileMenu() {
       </DropdownTrigger>
       <DropdownMenu aria-label="User Actions" variant="flat">
         <DropdownItem key="settings">My Settings</DropdownItem>
-        <DropdownItem key="logout" color="danger">
+        <DropdownItem onClick={() => signout()} key="logout" color="danger">
           Log Out
         </DropdownItem>
       </DropdownMenu>
