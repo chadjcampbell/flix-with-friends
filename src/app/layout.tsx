@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { validateRequest } from "@/actions/auth/validateRequest";
 import { redirect } from "next/navigation";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,10 +24,12 @@ export default async function RootLayout({
     return redirect("/no-auth/landing");
   }
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={inter.className}>
-        <Navbar />
-        <main className="min-h-dvh w-dvw bg-black">{children}</main>
+        <Providers>
+          <Navbar />
+          <main className="min-h-dvh w-dvw bg-black">{children}</main>
+        </Providers>
       </body>
     </html>
   );
