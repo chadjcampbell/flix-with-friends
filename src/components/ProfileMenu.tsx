@@ -6,16 +6,39 @@ import {
   DropdownItem,
   Avatar,
 } from "@nextui-org/react";
+import { Key } from "react";
 
 export default function ProfileMenu() {
+  const itemSelection = (key: Key) => {
+    switch (key) {
+      case "logout":
+        signout();
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <Dropdown placement="bottom-start">
       <DropdownTrigger>
-        <Avatar isBordered color="secondary" showFallback src="TODO" />
+        <Avatar
+          isBordered
+          as="button"
+          className="transition-transform"
+          color="secondary"
+          showFallback
+          src="TODO"
+        />
       </DropdownTrigger>
-      <DropdownMenu aria-label="User Actions" variant="flat">
+      <DropdownMenu
+        onAction={(key) => itemSelection(key)}
+        aria-label="User Actions"
+        variant="flat"
+      >
         <DropdownItem key="settings">My Settings</DropdownItem>
-        <DropdownItem onClick={() => signout()} key="logout" color="danger">
+        <DropdownItem key="logout" color="danger">
           Log Out
         </DropdownItem>
       </DropdownMenu>

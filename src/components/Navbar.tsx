@@ -18,25 +18,25 @@ import ProfileMenu from "./ProfileMenu";
 
 const navItems = [
   {
-    path: "/",
+    path: "/auth",
     name: "Home",
   },
   {
-    path: "/my-flix",
+    path: "/auth/my-flix",
     name: "My Flix",
   },
   {
-    path: "/friends",
+    path: "/auth/friends",
     name: "Friends",
   },
   {
-    path: "/contact-us",
+    path: "/auth/contact-us",
     name: "Contact Us",
   },
 ];
 
 export default function NavBar() {
-  let pathname = usePathname() || "/";
+  let pathname = usePathname() || "/auth/";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hoveredPath, setHoveredPath] = useState(pathname);
 
@@ -97,10 +97,10 @@ export default function NavBar() {
                     }}
                     transition={{
                       type: "spring",
-                      bounce: 0.25,
-                      stiffness: 130,
-                      damping: 9,
-                      duration: 0.3,
+                      bounce: 0.025,
+                      stiffness: 200,
+                      damping: 20,
+                      duration: 0.1,
                     }}
                   />
                 )}
@@ -130,7 +130,7 @@ export default function NavBar() {
                 onClick={() =>
                   setTimeout(() => {
                     setIsMenuOpen(false);
-                  }, 1000)
+                  }, 500)
                 }
               >
                 <span>{item.name}</span>
@@ -144,10 +144,10 @@ export default function NavBar() {
                     }}
                     transition={{
                       type: "spring",
-                      bounce: 0.25,
-                      stiffness: 130,
-                      damping: 9,
-                      duration: 0.3,
+                      bounce: 0.025,
+                      stiffness: 200,
+                      damping: 20,
+                      duration: 0.1,
                     }}
                   />
                 )}

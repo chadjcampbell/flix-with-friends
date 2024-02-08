@@ -4,6 +4,7 @@ import signup from "@/actions/auth/signup";
 import { Button, Card, Input } from "@nextui-org/react";
 import Link from "next/link";
 import { useFormState } from "react-dom";
+import SignUpButton from "./SignUpButton";
 
 const SignUpForm = () => {
   const initialState = { error: null };
@@ -42,12 +43,7 @@ const SignUpForm = () => {
         ) : (
           <br />
         )}
-        <Button
-          type="submit"
-          className="bg-red-800 text-white text-xl px-6 py-2 rounded-lg hover:bg-red-600"
-        >
-          Sign Up
-        </Button>
+        <SignUpButton />
         <p className="text-center">
           Already a member?{" "}
           <Link className="text-indigo-800" href="/no-auth/signin">
