@@ -3,7 +3,11 @@ import { Navbar, NavbarContent, NavbarBrand, Link } from "@nextui-org/react";
 
 const NoAuthNavbar = () => {
   return (
-    <Navbar isBlurred={false} maxWidth="full" className="bg-transparent">
+    <Navbar
+      isBlurred={false}
+      maxWidth="full"
+      className="bg-transparent absolute top-0"
+    >
       <NavbarContent justify="start">
         <NavbarBrand>
           <Link href="/no-auth/landing" className="m-6">
