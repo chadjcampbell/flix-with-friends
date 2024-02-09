@@ -15,6 +15,7 @@ import {
   Link,
 } from "@nextui-org/react";
 import ProfileMenu from "./ProfileMenu";
+import Searchbar from "./Searchbar";
 
 const navItems = [
   {
@@ -50,16 +51,6 @@ export default function NavBar() {
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
-      </NavbarContent>
-      <NavbarContent className="sm:hidden pr-3" justify="center">
-        <NavbarBrand>
-          <Image
-            src={"/logos/logo-white-crop.png"}
-            alt="Flix with Friends Logo"
-            width={200}
-            height={40}
-          />
-        </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-4" justify="start">
         <NavbarBrand>
@@ -108,7 +99,21 @@ export default function NavBar() {
             </NavbarItem>
           );
         })}
+        <NavbarItem>
+          <Searchbar />
+        </NavbarItem>
       </NavbarContent>
+      <NavbarItem className="sm:hidden">
+        <Image
+          src={"/logos/logo-white-crop.png"}
+          alt="Flix with Friends Logo"
+          width={200}
+          height={40}
+        />
+      </NavbarItem>
+      <NavbarItem className="sm:hidden">
+        <Searchbar />
+      </NavbarItem>
       <NavbarContent justify="end">
         <ProfileMenu />
       </NavbarContent>
