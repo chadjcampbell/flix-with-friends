@@ -23,17 +23,16 @@ async function getTrendingMovies() {
 
 export default async function Trending() {
   const movies = await getTrendingMovies();
-  console.log(movies);
 
   return (
-    <div className="flex gap-2 overflow-hidden">
+    <div className="flex gap-2">
       {movies.results.map((movie: any) => (
         <Card key={movie.id} radius="lg" className="border-none">
           <Image
             alt={movie.title}
             className="object-cover"
             height={200}
-            src={`${process.env.TMDB_URL}${movie.poster_path}`}
+            src={`${process.env.TMDB_IMG}${movie.poster_path}`}
             width={200}
           />
         </Card>
