@@ -1,3 +1,10 @@
+import Trending from "@/components/home/Trending";
+
 export default function Home() {
-  return <h2 className="text-white">Home</h2>;
+  return (
+    <section>
+      <h2>Trending</h2>
+      <Trending />
+    </section>
+  );
 }
