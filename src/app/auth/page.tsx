@@ -7,7 +7,7 @@ export default async function Home() {
   return (
     <section>
       <h2>Trending</h2>
-      <Suspense fallback={<p>Loading feed...</p>}>
+      <Suspense fallback={<p>Loading trending...</p>}>
         <Trending trendingMovies={trendingMovies} />
       </Suspense>
     </section>
