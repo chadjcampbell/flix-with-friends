@@ -26,15 +26,14 @@ export default function Trending({ trendingMovies }: trendingMoviesProps) {
       navigation
     >
       {trendingMovies.results.map((movie: any) => (
-        <SwiperSlide key={movie.id} className="!w-48">
-          <Card radius="lg" className="border-none">
-            <Image
-              alt={movie.title}
-              height={288}
-              src={`${process.env.NEXT_PUBLIC_TMDB_IMG}${movie.poster_path}`}
-              width={192}
-            />
-          </Card>
+        <SwiperSlide key={movie.id} className="!w-auto">
+          <Image
+            alt={movie.title}
+            width={185}
+            height={278}
+            src={`${process.env.NEXT_PUBLIC_TMDB_IMG}${movie.poster_path}`}
+            className="rounded-lg"
+          />
         </SwiperSlide>
       ))}
     </Swiper>
