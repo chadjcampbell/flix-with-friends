@@ -1,9 +1,8 @@
 "use client";
 
-import { Card } from "@nextui-org/react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y } from "swiper/modules";
+import { Navigation, A11y } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -20,10 +19,14 @@ export default function Trending({ trendingMovies }: trendingMoviesProps) {
   return (
     <Swiper
       // install Swiper modules
-      modules={[Navigation, Pagination, A11y]}
+      modules={[Navigation, A11y]}
       spaceBetween={15}
       slidesPerView={"auto"}
       navigation
+      a11y={{
+        prevSlideMessage: "Previous slide",
+        nextSlideMessage: "Next slide",
+      }}
     >
       {trendingMovies.results.map((movie: any) => (
         <SwiperSlide key={movie.id} className="!w-auto">
