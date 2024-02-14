@@ -55,10 +55,11 @@ export default function NavBar() {
       <NavbarContent className="hidden sm:flex gap-4" justify="start">
         <NavbarBrand>
           <Image
+            priority
             src={"/logos/logo-white-crop.png"}
             alt="Flix with Friends Logo"
-            width={200}
-            height={40}
+            width={150}
+            height={37}
           />
         </NavbarBrand>
       </NavbarContent>

@@ -12,10 +12,11 @@ const NoAuthNavbar = () => {
         <NavbarBrand>
           <Link href="/no-auth/landing" className="m-6">
             <Image
+              priority
               src={"/logos/logo-white-crop.png"}
               alt="Flix with Friends Logo"
-              width={200}
-              height={40}
+              width={150}
+              height={37}
             />
           </Link>
         </NavbarBrand>
