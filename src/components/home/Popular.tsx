@@ -1,15 +1,14 @@
 "use client";
 
-import { Card } from "@nextui-org/react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y } from "swiper/modules";
+import { Navigation, Pagination, A11y, EffectFade } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import "swiper/css/effect-fade";
 
 type popularMoviesProps = {
   popularMovies: any;
@@ -17,24 +16,27 @@ type popularMoviesProps = {
 // TODO - Type API response
 
 export default function Popular({ popularMovies }: popularMoviesProps) {
+  console.log(popularMovies);
+
   return (
     <Swiper
       // install Swiper modules
-      modules={[Navigation, Pagination, A11y]}
-      spaceBetween={15}
-      slidesPerView={"auto"}
+      modules={[EffectFade, Navigation, Pagination, A11y]}
+      effect="fade"
       navigation
+      pagination={{
+        clickable: true,
+      }}
+      className="mySwiper w-full h-full"
     >
       {popularMovies.results.map((movie: any) => (
-        <SwiperSlide key={movie.id} className="!w-48">
-          <Card radius="lg" className="border-none">
-            <Image
-              alt={movie.title}
-              height={288}
-              src={`${process.env.NEXT_PUBLIC_TMDB_IMG}${movie.poster_path}`}
-              width={192}
-            />
-          </Card>
+        <SwiperSlide key={movie.id}>
+          <Image
+            alt={movie.title}
+            src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+            fill
+            className="object-contain"
+          />
         </SwiperSlide>
       ))}
     </Swiper>

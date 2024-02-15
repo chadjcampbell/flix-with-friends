@@ -9,11 +9,11 @@ export default async function Home() {
   const trendingMovies = await getTrendingMovies();
   return (
     <>
-      {/*       <section>
+      <section className="h-[70dvh]">
         <Suspense fallback={<p>Loading popular...</p>}>
           <Popular popularMovies={popularMovies} />
         </Suspense>
-      </section> */}
+      </section>
       <section>
         <h2>Trending</h2>
         <Suspense fallback={<p>Loading trending...</p>}>
