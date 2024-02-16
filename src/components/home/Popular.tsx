@@ -27,16 +27,18 @@ export default function Popular({ popularMovies }: popularMoviesProps) {
       pagination={{
         clickable: true,
       }}
-      className="mySwiper w-full h-full"
     >
       {popularMovies.results.map((movie: any) => (
         <SwiperSlide key={movie.id}>
-          <Image
-            alt={movie.title}
-            src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-            fill
-            className="object-contain"
-          />
+          <div className="flex justify-center">
+            <Image
+              width={800}
+              height={400}
+              className="w-auto"
+              alt={movie.title}
+              src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+            />
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>
