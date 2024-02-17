@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y, EffectFade } from "swiper/modules";
 
@@ -9,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import Trailer from "./Trailer";
 
 type popularMoviesProps = {
   popularMovies: any;
@@ -30,15 +30,7 @@ export default function Popular({ popularMovies }: popularMoviesProps) {
     >
       {popularMovies.results.map((movie: any) => (
         <SwiperSlide key={movie.id}>
-          <div className="flex justify-center">
-            <Image
-              width={800}
-              height={400}
-              className="w-auto"
-              alt={movie.title}
-              src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-            />
-          </div>
+          {({ isActive }) => <Trailer movie={movie} isActive={isActive} />}
         </SwiperSlide>
       ))}
     </Swiper>
